@@ -1,97 +1,78 @@
 <!DOCTYPE html>
-<!-- saved from url=(0023)http://hosts.ren/ -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=1">
-        <meta name="keywords" content="hosts,google,gfw,facebook,twitter">
-        <meta name="description" content="A Share free Google global ip library website">
-        <title>Hosts | A Share free Google global ip library website</title>
-        <link rel="shortcut icon" href="./favicon.ico" />
-        <link rel="stylesheet" type="text/css" href="./index_files/index.css">
-    </head>
-    <body>
-            <script type="text/javascript">var type=navigator.appName
-if (type=="Netscape"){
-var lang = navigator.language
-}
-else{
-var lang = navigator.userLanguage
-}
-//取得浏览器语言的前两个字母
-var lang = lang.substr(0,2)
-// 英语
-if (lang == "en"){
-window.location.href="https://hosts.ren/"
-}
-// 中文 - 不分繁体和简体
-else if (lang == "zh"){
-  window.location.href="https://hosts.ren/index-zh.html"
-//  注释掉了上面跳转,不然会陷入无限循环
-}
-// 除上面所列的语言
-else{
-window.location.href="https://hosts.ren/"
-}
-</script>
-        <div class="container">
-            <div class="lang"><a href="http://hosts.ren/" class="active">ENGLISH</a> / <a href="http://hosts.ren/index-zh.html">简体中文</a></div>
-            <img class="logo" src="./index_files/logo.png"></br>
-			<img src="https://ws1.sinaimg.cn/large/006fVPCvjw1f64viu0ugvj30r805k0vk.jpg">
-            <div class="description">A Share free Google global ip library website</div>
-            <div class="version">Release (2016-07-24)</div>
-            <div class="download">
-                <div class="platform-select animate">
-                    <span class="platform">
-                        <a href="http://hosts.ren/hosts/hosts" target="_blank">Linux</a>
-                    </span>
-                    <span>|</span>
-                    <span class="platform">
-                        <a href="http://hosts.ren/hosts/hosts" target="_blank">OSX</a>
-                    </span>
-                    <span>|</span>
-                    <span class="platform">
-                        <a href="http://hosts.ren/hosts/windows.zip" target="_blank">Windows</a>
-                    </span>
-                </div>
-                <div class="architecture-select animate">
-                    <span class="platform">
-                       
-                        <a href="http://hosts.ren/hosts/hosts" target="_blank">Linux</a>
-                    </span>
-                    <span>|</span>
-                    <span class="platform">
-                        <a href="http://hosts.ren/hosts/hosts" target="_blank">OSX</a>
-                    </span>
-                    <span>|</span>
-                    <span class="platform">
-                        
-                        <a href="http://hosts.ren/hosts/windows.zip" target="_blank">Windows</a>
-                    </span>
-                </div>
-            </div>
-            <ul class="intro">
-                <li class="item">
-                    <div class="main">Easy Use</div>
-                    <div class="sub">Simple &amp; Cross Platform</div>
-                </li>
-                <li class="item">
-                    <div class="main">Fast Build</div>
-                    <div class="sub">1000+ Posts Per Second</div>
-                </li>
-                <li class="item">
-                    <div class="main">Elegant Theme</div>
-                    <div class="sub">Fresh Visual Style</div>
-                </li>
-            </ul>
-           <div class="split"></div>
-            
-            <a href="http://hosts.ren/start.html" target="_blank"><img class="btn start" src="start.png" /></a>
-        </div>
-        <div class="footer">
-            <span class="copyright">Hosts © 2016</span>
-            <span class="publish">This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
-        </div>
-    
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <title>域名WHOIS查询工具</title>
+    <style type='text/css'>
+    #search{
+      height: 400px;
+      overflow: scroll;
+    }
+    .btn-primary{
+      margin: 2px;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+     <h4>请输入要查询WHOIS的域名，一行一个</h4>
+     <div id="create" class="center-block" style="margin-bottom:5px;">
 
-</body></html>
+
+<div class="row">
+  <div class="col-xs-12 col-md-9">
+      <div class="row">
+         <div class="col-xs-2">
+          长度：<select name="cLen" id="cLen"><option value="1">1</option>
+          <option value="2">2</option><option value="3" selected>3</option><option value="4">4</option>
+          <option value="5">5</option><option value="6">6</option><option value="7">7</option></select>
+        </div>
+          <div class="col-xs-4">域名类型：
+            <label class="radio-inline">
+              <input type="radio" id="cType" name="cType" value="2" checked="checked"/> 数字 
+            </label>
+            <label class="radio-inline">
+              <input type="radio" id="cType" value="1" name="cType" /> 声母
+            </label>
+          </div>
+          <div class="col-xs-4">详细信息：
+            <label class="checkbox-inline">
+              <input type="checkbox" name="moreinfo" id="moreinfo" value="1" />(CC/TV/COM/NET)
+            </label>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-xs-12" id="tld">域名后缀：</div>
+      </div>
+  </div>
+  <div class="col-xs-6 col-md-3">
+    <div class="row">
+      <div class="col-xs-12">
+            <button name="btnCreate" class="btn btn-primary" id="btnCreate">生成</button>
+            <button name="btnCheck" id="btnCheck" class="btn btn-primary">开始查询</button>
+            <button name="btnReturn" id="btnReturn" class="btn btn-primary">继续查询</button>
+            <button name="btnReturn" id="btnAgain" class="btn btn-primary">批量重试</button>
+      </div>
+    </div>
+  </div>
+</div>
+     </div>
+     <div id="search">
+       <textarea name="domainname" id="domainname" cols="50" rows="5" class="form-control">please enter domain name</textarea>
+       <div id="result"></div>
+       <div id="msg" class="bg-danger"></div>
+      </div>
+    </div>
+  </body>
+  <script>
+  var  $= require('jQuery');
+  var jQuery = $;
+  </script>
+  <script type="text/javascript" src="js/domain.js"></script>
+  <script type="text/javascript" src="js/socket.js"></script>
+  <script type="text/javascript" src="js/whoisAddr.js"></script>
+  <script type="text/javascript" src="js/format.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+</html>
